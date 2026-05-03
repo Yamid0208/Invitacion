@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sorpresa para ti ❤️</title>
+
+<style>
+
+*{
+box-sizing:border-box;
+}
+
+body{
+margin:0;
+font-family:Arial;
+background:linear-gradient(135deg,#ff9966,#ff5e62);
+color:white;
+text-align:center;
+overflow-x:hidden;
+}
+
+.section{
+min-height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+transition:1s;
+padding:20px;
+}
+
+h1{
+font-size:clamp(24px,8vw,48px);
+margin:20px 10px;
+}
+
+h2{
+font-size:clamp(18px,6vw,36px);
+margin:20px 10px;
+}
+
+p{
+font-size:clamp(14px,4vw,18px);
+margin:10px;
+line-height:1.5;
+max-width:90%;
+}
+
+button{
+padding:clamp(12px,3vw,15px) clamp(24px,5vw,30px);
+font-size:clamp(14px,4vw,18px);
+border:none;
+border-radius:30px;
+background:white;
+color:#ff5e62;
+cursor:pointer;
+margin-top:20px;
+transition:transform 0.2s;
+min-width:150px;
+white-space:nowrap;
+}
+
+button:hover{
+transform:scale(1.05);
+}
+
+button:active{
+transform:scale(0.95);
+}
+
+.hidden{
+display:none;
+}
+
+img{
+width:clamp(200px,80vw,300px);
+max-width:90%;
+border-radius:15px;
+margin:10px;
+box-shadow:0 10px 20px rgba(0,0,0,0.3);
+}
+
+.fade{
+animation:fade 2s ease;
+}
+
+@keyframes fade{
+from{opacity:0;transform:translateY(40px);}
+to{opacity:1;}
+}
+
+/* Media queries para tablets */
+@media(max-width:768px){
+.section{
+min-height:auto;
+padding:15px;
+}
+
+img{
+width:clamp(150px,70vw,250px);
+}
+}
+
+/* Media queries para celulares */
+@media(max-width:480px){
+.section{
+min-height:100vh;
+padding:15px;
+}
+
+h1{
+font-size:clamp(20px,7vw,32px);
+}
+
+h2{
+font-size:clamp(16px,5vw,28px);
+}
+
+button{
+padding:12px 20px;
+font-size:16px;
+min-width:160px;
+margin-top:30px;
+}
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="section" id="inicio">
+
+<h1>Tengo una sorpresa para ti ❤️</h1>
+
+<button onclick="mostrarSorpresa()">Descubrir</button>
+
+</div>
+
+<div class="section hidden" id="cartagena">
+
+<h1 class="fade">Un lugar mágico...</h1>
+
+<img src="https://images.unsplash.com/photo-1714686495394-73e2bb1bbd39?q=80&w=1472&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+<img src="https://images.unsplash.com/photo-1708716174183-dbb1cd4326bc?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+
+<p class="fade">
+Atardeceres hermosos<br>
+Momentos inolvidables
+</p>
+
+<button onclick="mostrarFinal()" style="margin-bottom: 100px;">Quiero saber más</button>
+
+</div>
+
+<div class="section hidden" id="final">
+
+<h1 class="fade">Prepárate...</h1>
+
+<h2 class="fade">
+Este 29 de Mayo<br>
+Nos vamos a<br>
+
+<span style="font-size:clamp(28px,10vw,50px)">
+Cartagena ❤️
+</span>
+</h2>
+
+<p class="fade">
+A celebrar nuestro aniversario
+</p>
+
+</div>
+
+
+<script>
+
+function mostrarSorpresa(){
+
+document.getElementById("inicio").classList.add("hidden");
+document.getElementById("cartagena").classList.remove("hidden");
+
+}
+
+function mostrarFinal(){
+
+document.getElementById("cartagena").classList.add("hidden");
+document.getElementById("final").classList.remove("hidden");
+
+}
+
+</script>
+
+</body>
+</html>
